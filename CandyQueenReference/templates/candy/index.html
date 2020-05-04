@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class='candy'>
+        <h2>Welcome to the candy app</h2>
+    </div>
+    <div class="candies">
+    {% for candy in candies %}
+{#        {% if candy.price > 5 %}#}
+{#            <p>Expensive!</p>#}
+{#        {% else %}#}
+{#            <p>Not so expensive</p>#}
+{#        {% endif %}#}
+
+{#        <h4>{{ candy.name }}</h4>#}
+{#        <p>{{ candy.price }}</p>#}
+
+        {% include 'candy/single_candy.html' with candy=candy %}
+    {% endfor %}
+    </div>
+{% endblock %}
